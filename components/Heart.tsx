@@ -41,8 +41,8 @@ const Heart = ({ onPress, style }: HeartProps) => {
   const translateY = useSharedValue(0);
   const opacity = useSharedValue(1);
 
-   // Function to play pop sound
-   const playPopSound = async () => {
+  // Function to play pop sound
+  const playPopSound = async () => {
     try {
       const { sound } = await Audio.Sound.createAsync(
         require("../assets/sounds/pop.mp3") // Ensure this file exists in the correct path
@@ -121,27 +121,30 @@ const styles = StyleSheet.create({
   },
   messageContainer: {
     position: "absolute",
-    top: 20, // Ensures it stays near the top
+    top: "50%", // Moves the top of the box to the center
     left: "50%",
-    transform: [{ translateX: -50 }], // Centers it horizontally
-    zIndex: 9999, // Always on top
-    elevation: 10, // Ensures it appears above other views on Android
+    transform: [{ translateX: -90 }, { translateY: -50 }], // Centers it fully
+    zIndex: 9999, // Ensures it's on top
+    elevation: 10, // Ensures visibility on Android
     paddingHorizontal: 15,
     paddingVertical: 8,
     borderRadius: 12,
-    maxWidth: "80%", // Ensures text is not too wide
+    minWidth: 180, // Prevents it from being too thin
+    maxWidth: "80%", // Prevents it from getting too wide
     alignItems: "center",
     justifyContent: "center",
-  }, 
+  },
   messageText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "#fff",
     textAlign: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(0, 0, 0, 0.4)", // Semi-transparent black background
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 10,
+    flexShrink: 1, // Ensures text doesn't overflow
+    flexWrap: "wrap", // Allows text to break naturally
   },
 });
 

@@ -14,7 +14,7 @@ const App = () => {
         <View style={styles.centerContent}>
           {/* Pink Text Box Above Button */}
           <View style={styles.textBox}>
-            <Text style={styles.textBoxText}>Ahoj láska ❤️, vytvoril som ti k valentínu takúto maličkú hru, potrebuješ získať šé bodov pre vyhratie hry. {'\n'}Dúfam, že ťa aspoň trošku poteší ❤️.</Text>
+            <Text style={styles.textBoxText}>Ahoj láska ❤️, vytvoril som ti k valentínu takúto maličkú hru, potrebuješ získať 30 bodov pre vyhratie hry. {'\n'}Dúfam, že ťa aspoň trošku poteší ❤️.</Text>
           </View>
 
           {/* Button */}
@@ -26,7 +26,6 @@ const App = () => {
           </TouchableOpacity>
 
           <View style={styles.textBox}>
-
             <Text style={styles.textBoxText}>V pravom hornom rohu je tlačidlo pre spustenie pesničky.</Text>
           </View>
         </View>
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: "center", // Ensures both elements are centered
   },
   textBox: {
-    backgroundColor: Colors.Red, // Pink with 80% opacity
+    backgroundColor: "rgba(121, 38, 255, 0.79)", // Pink with 80% opacity
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 30, // Makes rounded edges
@@ -66,7 +65,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    backgroundColor: Colors.Violet,
+    backgroundColor: "rgb(255, 0, 0)",
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 25,

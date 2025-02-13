@@ -9,17 +9,15 @@ const messages = [
   "Len tak ďalej! 👏",
   "Si šikovná! 🏆",
   "Paráda, pokračuj! 🔥",
-  "Už ti nechýba veľa! 🏁",
   "Perfektné, len tak ďalej! 🌟",
   "Máš na to! 💪",
   "Si na správnej ceste! 🛤️",
   "Pokračuj, zvládneš to! 🌸",
-  "Si hviezda! ⭐",
+  "Si moja hviezdička! ⭐",
   "Nezastavuj sa, super! 🎯",
   "Wow, si fakt dobrá! 🎉",
-  "Každým klikom si lepšia! 🥇",
   "Tvoje skóre rastie ako raketa! 🚀",
-  "Ešte pár bodov a budeš najlepšia! 🏅",
+  "Ešte pár bodov a budeš najlepšia! 🏅, ale to už si ❤️",
   "Tvoj výkon je neskutočný! 🔥",
   "Fantastické! Len pokračuj! 💖",
   "Si nezastaviteľná! 💥",
@@ -65,8 +63,8 @@ const GameComponent = () => {
     setScore((prev) => {
       const newScore = prev + 1;
 
-      // Show an encouraging message every 10 points
-      if (newScore % 10 === 0) {
+      // Show an encouraging message every 2 points
+      if (newScore % 2 === 0) {
         const randomIndex = Math.floor(Math.random() * messages.length);
         setEncouragingMessage(messages[randomIndex]);
       }
