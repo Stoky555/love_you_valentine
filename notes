@@ -1,0 +1,8 @@
+To run the app:
+npx expo start -c  
+xpo start --clear 
+
+To deploy app on expo:
+
+npx expo export -p web
+eas deploy

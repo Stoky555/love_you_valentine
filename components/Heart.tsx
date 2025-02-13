@@ -28,7 +28,8 @@ const messages = [
   "Mám rád, ako sa ku mne túliš! 🤗❤️",
   "Si očarujúca a výnimočná! ✨🌟",
   "Tvoje ruky sú tak jemné a príjemné! 🤲💕",
-  "Si ako magnet, stále ma k tebe ťahá! 🧲❤️"
+  "Si ako magnet, stále ma k tebe ťahá! 🧲❤️",
+  "Zbozňujem, že sa smejes mojim vtipom ❤️",
 ];
 
 const Heart = ({ onPress, style }: HeartProps) => {

@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <Stack
       screenOptions={{
-        headerTitle: "ĽÚBIM ŤA LÁSKA",
+        headerTitle: "Valentíhra",
         headerTitleAlign: "center", // Centers the text
         headerStyle: { backgroundColor: Colors.Pink }, // Background color
         headerTitleStyle: {
