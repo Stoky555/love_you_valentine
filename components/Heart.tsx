@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View, StyleProp, ViewStyle } from 'react-native';
 import Animated, { Easing, useSharedValue, withTiming, useAnimatedStyle, runOnJS } from 'react-native-reanimated';
+import { Audio } from "expo-av";
 
 interface HeartProps {
   onPress: () => void;
@@ -39,7 +40,23 @@ const Heart = ({ onPress, style }: HeartProps) => {
   const translateY = useSharedValue(0);
   const opacity = useSharedValue(1);
 
+   // Function to play pop sound
+   const playPopSound = async () => {
+    try {
+      const { sound } = await Audio.Sound.createAsync(
+        require("../assets/sounds/pop.mp3") // Ensure this file exists in the correct path
+      );
+
+      await sound.setVolumeAsync(0.3); // Adjust volume (range: 0.0 - 1.0)
+      await sound.playAsync();
+    } catch (error) {
+      console.error("Error playing sound:", error);
+    }
+  };
+
   const handlePress = () => {
+    playPopSound(); // Play pop sound on press
+
     scale.value = withTiming(0, { duration: 300, easing: Easing.ease }, () => {
       runOnJS(setPopped)(true);
       runOnJS(setShowMessage)(true);
